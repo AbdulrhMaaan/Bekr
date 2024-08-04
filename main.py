@@ -10,14 +10,14 @@ import logging
 app = Flask(__name__)
 
 def setup_webdriver():
-    chrome_driver_path = r'/home/madiit/chromedriverfolder/chromedriver'
+    chrome_driver_path = r'/usr/local/bin/chromedriver'
     chrome_options = Options()
     chrome_options.add_argument('--headless')  # Ensure GUI is not required
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--remote-debugging-port=5000')
-    chrome_options.binary_location = r'/home/madiit/chromefolder/chrome'
+    chrome_options.binary_location = r'/usr/bin/google-chrome'
 
     service = Service(chrome_driver_path)
     driver = webdriver.Chrome(service=service, options=chrome_options)
